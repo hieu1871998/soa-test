@@ -108,12 +108,6 @@ export const InteractiveMap = ({ data, onChange }: InteractiveMapProps) => {
 				className='relative h-full w-full origin-center translate-x-[var(--x)] translate-y-[var(--y)] transform transition-all duration-500 data-[zoom=true]:scale-200'
 				style={getTransformStyles()}
 				onClick={handleReset}
-				// {...{
-				// 	style: {
-				// 		'--x': activeMarker ? parseFloat(activeMarker.position.left) : 0,
-				// 		'--y': activeMarker ? parseFloat(activeMarker.position.top) : 0,
-				// 	} as CSSProperties,
-				// }}
 				data-zoom={!!activeMarker}
 			>
 				<Image

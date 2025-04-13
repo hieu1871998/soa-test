@@ -13,8 +13,6 @@ const Home = async () => {
 	const pages = await getPages(locale);
 	const page = pages[0];
 
-	console.log('page: ', page);
-
 	return (
 		<main className='max-w-screen overflow-x-hidden'>
 			<HeroSection bannerMenu={page.banner_menu} />
