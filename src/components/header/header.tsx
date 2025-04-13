@@ -15,7 +15,7 @@ export const Header = ({ data }: { data: string[] }) => {
 				LOGO SAMPLE
 			</Link>
 			<NavigationBar data={data} />
-			<HeaderMenu />
+			<HeaderMenu navItems={data} />
 		</AriaHeader>
 	);
 };

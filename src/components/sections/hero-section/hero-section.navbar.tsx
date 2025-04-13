@@ -25,7 +25,7 @@ export const HeroSectionNavigationBar = ({ bannerMenu = [] }: { bannerMenu?: str
 
 	return (
 		<nav className='absolute right-0 bottom-0 left-0 overflow-x-visible overflow-y-hidden pb-9 md:pb-10 xl:pb-20'>
-			<ul className='mx-auto flex w-full items-center justify-between border-t border-white/30 px-4 md:px-8 lg:gap-6 xl:w-[77.5rem] xl:gap-0 xl:px-20'>
+			<ul className='mx-auto grid w-full grid-cols-3 items-start justify-between border-t border-white/30 px-4 md:px-8 lg:gap-6 xl:w-[77.5rem] xl:gap-0 xl:px-20'>
 				{bannerItems.map(item => (
 					<HeroSectionNavigationItem
 						key={item.label}

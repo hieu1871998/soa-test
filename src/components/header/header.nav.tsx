@@ -10,12 +10,6 @@ export const NavigationBar = ({ data }: { data: string[] }) => {
 						label={item}
 						key={item}
 						href='#'
-						// className={cn({
-						// 	'xl:pr-[8.0625rem]': index === 0,
-						// 	'xl:pr-[4.6875rem]': index === 1,
-						// 	'xl:pr-[2.8125rem]': index === 2,
-						// 	'content-end': index === 3,
-						// })}
 					/>
 				))}
 			</ul>
@@ -23,7 +17,7 @@ export const NavigationBar = ({ data }: { data: string[] }) => {
 	);
 };
 
-const NavigationItem = ({ className, label, href }: { className?: string; label: string; href: string }) => {
+export const NavigationItem = ({ className, label, href }: { className?: string; label: string; href: string }) => {
 	return (
 		<li
 			className={cn(

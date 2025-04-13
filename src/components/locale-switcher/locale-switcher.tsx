@@ -31,7 +31,7 @@ export const LocaleSwitcher = () => {
 
 	return (
 		<Switch
-			className='group ml-auto flex items-center gap-1 rounded-full text-sm text-white uppercase disabled:opacity-50'
+			className='group flex items-center gap-1 rounded-full text-sm text-white uppercase disabled:opacity-50 md:ml-auto'
 			isSelected={isSelected}
 			onChange={handleChange}
 			isDisabled={isPending}
