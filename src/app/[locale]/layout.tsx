@@ -39,9 +39,11 @@ const RootLayout = async ({
 	return (
 		<html lang={locale}>
 			<body className={`${poppins.variable} ${poppins.className} antialiased`}>
-				<Header data={page.head_menu} />
-				<NextIntlClientProvider>{children}</NextIntlClientProvider>
-				<Footer data={page.footer} />
+				<NextIntlClientProvider>
+					<Header data={page.head_menu} />
+					{children}
+					<Footer data={page.footer} />
+				</NextIntlClientProvider>
 			</body>
 		</html>
 	);

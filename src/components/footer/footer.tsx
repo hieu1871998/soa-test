@@ -4,6 +4,7 @@ import { YoutubeIcon } from '@/icons/youtube';
 import { Footer as FooterType } from '@/lib/types';
 import { cn } from '@/utils/cn';
 import Link from 'next/link';
+import { LocaleSwitcher } from '../locale-switcher';
 
 export const Footer = ({ data }: { data: FooterType }) => {
 	return (
@@ -40,6 +41,7 @@ export const Footer = ({ data }: { data: FooterType }) => {
 					<p className='text-center text-sm text-white md:text-base'>© BASIC 2024</p>
 					<SocialLinks className='hidden md:flex' />
 				</div>
+				<LocaleSwitcher />
 			</div>
 		</footer>
 	);
