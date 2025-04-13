@@ -19,6 +19,7 @@ export const FilePicker = ({ files, onSelect, localeData = [], ...props }: FileP
 			<FileTrigger
 				onSelect={onSelect}
 				acceptedFileTypes={['application/pdf']}
+				{...props}
 			>
 				<Button
 					variant='secondary'

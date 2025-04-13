@@ -8,7 +8,13 @@ import { cn } from '@/utils/cn';
 import Image from 'next/image';
 import Thumbnail from '../../../../public/experiences-thumbnail.png';
 
-const icons = [<ShieldIcon />, <HandShakeIcon />, <GlobeIcon />, <PersonalizationIcon />, <SmileyIcon />];
+const icons = [
+	<ShieldIcon key='shield' />,
+	<HandShakeIcon key='handshake' />,
+	<GlobeIcon key='globe' />,
+	<PersonalizationIcon key='personalization' />,
+	<SmileyIcon key='smiley' />,
+];
 
 export const ExperiencesSection = ({ data }: { data: Bloc4 }) => {
 	return (
@@ -38,10 +44,10 @@ export const ExperiencesSection = ({ data }: { data: Bloc4 }) => {
 			<div className='mx-auto grid max-w-[77.5rem] grid-cols-2 gap-x-4 gap-y-6 px-4 md:grid-cols-6 md:px-16 lg:grid-cols-5 xl:px-0'>
 				{data.pictos.map((picto, index) => (
 					<div
+						key={`${picto.title}${picto.description}`}
 						className={cn(
 							'col-span-1 flex flex-col items-center gap-2 last-of-type:col-span-2 md:col-span-2 md:last-of-type:col-span-3 md:nth-[4]:col-span-3 lg:col-span-1 lg:last-of-type:col-span-1 lg:nth-[4]:col-span-1'
 						)}
-						key={picto.title}
 					>
 						<div className='bg-green flex w-fit items-center rounded-full p-2.5 text-xl text-white'>{icons[index]}</div>
 						<div>

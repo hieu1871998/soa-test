@@ -13,11 +13,11 @@ import { Button } from 'react-aria-components';
 import Map from '../../../public/map.png';
 
 export const icons = [
-	<MountainsOutlinedIcon />,
-	<TentOutlinedIcon />,
-	<CompassOutlinedIcon />,
-	<FishingOutlinedIcon />,
-	<CrosshairOutlinedIcon />,
+	<MountainsOutlinedIcon key='mountains' />,
+	<TentOutlinedIcon key='tent' />,
+	<CompassOutlinedIcon key='compass' />,
+	<FishingOutlinedIcon key='fishing' />,
+	<CrosshairOutlinedIcon key='crosshair' />,
 ];
 
 interface Position {
@@ -115,9 +115,9 @@ export const InteractiveMap = ({ data, onChange }: InteractiveMapProps) => {
 					src={Map}
 					alt='Map'
 				/>
-				{markers.map(marker => (
+				{markers.map((marker, index) => (
 					<Button
-						key={marker.address}
+						key={index}
 						className='absolute top-[var(--top)] left-[var(--left)] -translate-x-1/2 -translate-y-1/2 transform cursor-pointer transition-transform duration-300'
 						onClick={() => {
 							const _marker = activeMarker?.address !== marker.address ? marker : undefined;

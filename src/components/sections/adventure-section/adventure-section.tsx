@@ -32,6 +32,7 @@ export const AdventureSection = ({ data }: { data: Bloc1 }) => {
 				<div className='grid grid-cols-1 gap-6 md:grid-cols-3 md:flex-row md:gap-8'>
 					{cases.map(item => (
 						<Card
+							className='last-of-type:mt-8 first-of-type:md:mt-8 first-of-type:lg:mt-44 last-of-type:lg:mt-44'
 							key={item.title}
 							description={item.description}
 							cta={item.cta}

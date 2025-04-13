@@ -80,7 +80,7 @@ export const Calendar = <T extends DateValue>({ errorMessage, className, ...prop
 };
 
 export const CalendarHeader = () => {
-	let { direction } = useLocale();
+	const { direction } = useLocale();
 
 	return (
 		<header className='flex w-full items-center justify-center gap-2 px-1'>
