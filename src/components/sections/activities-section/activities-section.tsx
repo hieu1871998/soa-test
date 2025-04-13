@@ -1,14 +1,25 @@
-import { MountainsOutlinedIcon } from '@/icons/mountains-outlined';
-import { Bloc2 } from '@/lib/types';
+'use client';
+
+import { icons, InteractiveMap, Marker } from '@/components/interactive-map/interactive-map';
+import { Bloc2, CartePoint } from '@/lib/types';
+import { AnimatePresence, motion } from 'motion/react';
 import Image from 'next/image';
+import { useState } from 'react';
 import { Button } from '../../ui/button';
 import { SectionTitle } from '../../ui/section-title';
 
-const activities = ['Activité 1', 'Activité 2', 'Activité 3'];
+export const ActivitiesSection = ({ data, cartePoints }: { data: Bloc2; cartePoints: CartePoint[] }) => {
+	const [active, setActive] = useState<Marker>();
 
-export const ActivitiesSection = ({ data }: { data: Bloc2 }) => {
+	const handleChange = (marker: Marker | undefined) => {
+		setActive(marker);
+	};
+
 	return (
-		<section className='bg-section-accent relative px-4 py-8 md:px-8'>
+		<motion.section
+			className='bg-section-accent relative px-4 py-8 md:px-8'
+			layout
+		>
 			<Image
 				className='shutterstock-sm md:shutterstock-md lg:shutterstock-lg xl:shutterstock-xl object-cover object-center'
 				src='/shutterstock-sample.png'
@@ -16,24 +27,43 @@ export const ActivitiesSection = ({ data }: { data: Bloc2 }) => {
 				fill
 				sizes='100vw'
 			/>
-			<div className='relative z-[1] mx-auto flex max-w-[77.5rem] flex-col gap-5 md:gap-6'>
+			<motion.div
+				className='relative z-[1] mx-auto flex max-w-[77.5rem] flex-col gap-5 md:gap-6'
+				layout
+			>
 				<SectionTitle>{data.title}</SectionTitle>
-				<div className='flex flex-wrap content-center items-center justify-center gap-2 self-stretch'>
-					{data.cases.map(activity => (
-						<Button
-							key={activity}
-							variant='activity'
-							leftSection={<MountainsOutlinedIcon />}
+				<AnimatePresence initial={false}>
+					{active ? (
+						<motion.div
+							className='flex flex-wrap content-center items-center justify-center gap-2 self-stretch'
+							initial={{ opacity: 0, scale: 0 }}
+							animate={{ opacity: 1, scale: 1 }}
+							exit={{ opacity: 0, scale: 0 }}
+							layout
 						>
-							{activity}
-						</Button>
-					))}
-				</div>
-				<div
+							{active?.activities.map((activity, index) => (
+								<Button
+									key={activity}
+									variant='activity'
+									leftSection={icons[index % icons.length]}
+								>
+									{activity}
+								</Button>
+							))}
+						</motion.div>
+					) : null}
+				</AnimatePresence>
+				<motion.div
 					id='map'
-					className='bg-primary h-[37.5rem] w-full rounded-[1.25rem] opacity-5 md:h-[43.625rem]'
-				></div>
-			</div>
-		</section>
+					className='bg-primary h-[37.5rem] w-full rounded-[1.25rem] md:h-[43.625rem]'
+					layout
+				>
+					<InteractiveMap
+						data={cartePoints}
+						onChange={handleChange}
+					/>
+				</motion.div>
+			</motion.div>
+		</motion.section>
 	);
 };

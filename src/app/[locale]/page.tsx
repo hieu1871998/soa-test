@@ -19,7 +19,10 @@ const Home = async () => {
 		<main className='max-w-screen overflow-x-hidden'>
 			<HeroSection bannerMenu={page.banner_menu} />
 			<AdventureSection data={page.bloc_1} />
-			<ActivitiesSection data={page.bloc_2} />
+			<ActivitiesSection
+				data={page.bloc_2}
+				cartePoints={page.carte_point}
+			/>
 			<CalendarSection data={page.bloc_2_2} />
 			<ExploreSection data={page.bloc_3} />
 			<ExperiencesSection data={page.bloc_4} />
