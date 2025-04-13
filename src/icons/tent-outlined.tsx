@@ -1,0 +1,15 @@
+export const TentOutlinedIcon: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+	<svg
+		width='1em'
+		height='1em'
+		viewBox='0 0 32 32'
+		fill='none'
+		xmlns='http://www.w3.org/2000/svg'
+		{...props}
+	>
+		<path
+			d='m31.914 23.594-8-18A1 1 0 0 0 23 5H9a1 1 0 0 0-.909.586v.023L.086 23.594A1 1 0 0 0 1 25h30a1 1 0 0 0 .914-1.406M8 23H2.539L8 10.713zm2 0V10.713L15.461 23zm7.65 0L10.539 7H22.35l7.111 16z'
+			fill='currentColor'
+		/>
+	</svg>
+);

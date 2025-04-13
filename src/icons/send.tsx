@@ -1,0 +1,18 @@
+export const SendIcon: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+	<svg
+		width='1em'
+		height='1em'
+		viewBox='0 0 21 20'
+		fill='none'
+		xmlns='http://www.w3.org/2000/svg'
+		{...props}
+	>
+		<path
+			d='m6.917 5.267 7.075-2.359c3.175-1.058 4.9.675 3.85 3.85l-2.359 7.075c-1.583 4.759-4.183 4.759-5.766 0l-.7-2.1-2.1-.7c-4.759-1.583-4.759-4.175 0-5.766m2.258 6.108 2.983-2.992'
+			stroke='currentColor'
+			strokeWidth='1.5'
+			strokeLinecap='round'
+			strokeLinejoin='round'
+		/>
+	</svg>
+);
